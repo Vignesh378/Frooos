@@ -15,10 +15,10 @@ function ShowcaseSection({ products, highlights, partnerLogos, onAddToCart }) {
         <div className="space-y-10">
           <div className="space-y-3">
             <h2 className="font-display text-[clamp(2.2rem,4vw,3rem)] font-semibold text-slate-900">
-              Live your best life the <span className="italic text-rose-500">bruvana</span> way
+            Live fresh, the <span className="italic text-rose-500">Frooos</span> way
             </h2>
             <p className="max-w-lg text-base text-slate-600">
-              Beat the heat with Bruvana approved Remix recipes. Stay refreshed with signature mocktails crafted to party.
+            Stay chill with Frooos crafted bowls and juices made to refresh your day.
             </p>
           </div>
 

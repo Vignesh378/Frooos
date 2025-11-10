@@ -9,7 +9,7 @@ function Footer({ logoSrc }) {
             <img
               src={logoSrc}
               alt="Frooos"
-              className="h-14 w-auto drop-shadow-[0_12px_24px_rgba(148,163,184,0.45)]"
+              className="h-14 w-14 drop-shadow-[0_12px_24px_rgba(148,163,184,0.45)] "
             />
             <div className="max-w-lg space-y-3">
               <h3 className="font-display text-2xl font-semibold text-slate-900 drop-shadow-[0_12px_24px_rgba(148,163,184,0.45)]">

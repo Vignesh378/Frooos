@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { LogIn, LogOut, Search, Heart, User, ShoppingCart } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { LogIn, LogOut, Search, Heart, User, ShoppingCart, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 function Header({
   logoSrc,
@@ -10,6 +11,7 @@ function Header({
   onToggleCart,
   navCartRef,
 }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="sticky top-4 z-50 flex justify-center px-4 py-2">
       <motion.nav
@@ -101,15 +103,80 @@ function Header({
               </>
             )}
           </button>
+          
+          {/* Mobile Menu Button */}
           <button
             type="button"
-            onClick={() => onLinkClick("login")}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex items-center justify-center rounded-full bg-white p-2 shadow-inner shadow-slate-200 md:hidden"
+            aria-label="Menu"
           >
-            <LogIn className="h-5 w-5 text-slate-700" />
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5 text-slate-700" />
+            ) : (
+              <Menu className="h-5 w-5 text-slate-700" />
+            )}
           </button>
         </div>
       </motion.nav>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute left-4 right-4 top-20 z-40 overflow-hidden rounded-3xl bg-white/95 shadow-[0_20px_50px_rgba(148,163,184,0.4)] backdrop-blur-xl ring-1 ring-slate-100 md:hidden"
+          >
+            <div className="flex flex-col p-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id === "home" ? "" : link.id}`}
+                  onClick={(event) => {
+                    if (["cart", "login", "logout"].includes(link.id)) {
+                      event.preventDefault();
+                      onLinkClick(link.id);
+                    }
+                    setMobileMenuOpen(false);
+                  }}
+                  className="rounded-2xl px-5 py-3 text-base font-medium text-slate-700 transition-all duration-200 hover:bg-slate-100 active:bg-slate-200"
+                >
+                  {link.label}
+                </a>
+              ))}
+              
+              {/* Mobile Action Buttons */}
+              <div className="mt-2 grid grid-cols-2 gap-2 border-t border-slate-100 pt-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    onLinkClick("login");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex items-center justify-center gap-2 rounded-2xl bg-slate-100 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-200"
+                >
+                  <User className="h-4 w-4" />
+                  Profile
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onToggleCart();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  Cart {cartCount > 0 && `(${cartCount})`}
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

@@ -1,3 +1,9 @@
+import image1 from "../assets/image  1.jpg";
+import image2 from "../assets/image 2.jpg";
+import image3 from "../assets/image 3.jpg";
+import image4 from "../assets/image 4.jpg";
+import lycheeImage from "../assets/lychee-juice-lychee-fruit.jpg";
+
 export const navLinks = [
   { id: "home", label: "Home" },
   { id: "shop", label: "Shop" },
@@ -130,16 +136,14 @@ export const showcaseProducts = [
     name: "Remix Lychee",
     description: "Beat the heat with Bruvana-approved Remix Lychee.",
     price: 60,
-    image:
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=900&q=80",
+    image: lycheeImage,
   },
   {
     id: "sports-lychee",
     name: "Sports+ Lychee",
     description: "Electrolyte beverage crafted for summertime moves.",
     price: 50,
-    image:
-      "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80",
+    image: image2,
   },
 ];
 
@@ -175,18 +179,16 @@ export const bestSellerProducts = [
     name: "Margarita",
     price: 50,
     description:
-      "Add freshly squeezed lime juice and have yourself a blast! Mix with your choice of spirit and enjoy!",
-    image:
-      "https://images.unsplash.com/photo-1485395037611-6ced102d7746?auto=format&fit=crop&w=900&q=80",
+      "Rich beetroot blended with lime and mint. Add your choice of spirit and enjoy!",
+    image: image3,
   },
   {
     id: "mojito",
     name: "Mojito",
     price: 50,
     description:
-      "Perfect for a summer day when the sun is shining. Don’t forget your mint leaves!",
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+      "Dark grape and mint fusion. Perfect for a summer day when the sun is shining!",
+    image: image1,
   },
 ];
 
@@ -196,18 +198,16 @@ export const tropicalPartyProducts = [
     name: "Sports+ Mango",
     price: 55,
     description:
-      "Tropical mango electrolytes that refuel your whole crew.",
-    image:
-      "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80",
+      "Fresh squeezed orange juice with tropical vibes that refuel your whole crew.",
+    image: image4,
   },
   {
     id: "mango-chili",
     name: "Mango Chili Mojito",
     price: 52,
     description:
-      "Spicy mango and mint layers that elevate every beach-side night.",
-    image:
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=900&q=80",
+      "Dark berry blend with mint layers that elevate every beach-side night.",
+    image: image1,
   },
 ];
 
@@ -216,17 +216,15 @@ export const remixSignatureProducts = [
     id: "remix-original",
     name: "Remix Original",
     price: 60,
-    description: "Beat the heat with Bruvana-approved Remix party mix.",
-    image:
-      "https://images.unsplash.com/photo-1622782914767-404c59cb1716?auto=format&fit=crop&w=900&q=80",
+    description: "Sunshine citrus blend with Bruvana-approved Remix party mix.",
+    image: image4,
   },
   {
     id: "sports-lychee-plus",
     name: "Sports+ Lychee",
     price: 58,
-    description: "Electrolyte beverage crafted for summertime moves.",
-    image:
-      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80",
+    description: "Exotic lychee electrolyte beverage crafted for summertime moves.",
+    image: lycheeImage,
   },
 ];
 

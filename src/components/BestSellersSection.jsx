@@ -66,7 +66,7 @@ function BestSellersSection({
               <motion.img
                 src={product.image}
                 alt={product.name}
-                className="h-[320px] w-auto object-contain drop-shadow-[0_42px_45px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-105"
+                className="h-[320px] w-auto rounded-lg object-contain drop-shadow-[0_42px_45px_rgba(0,0,0,0.12)] transition-transform duration-500 group-hover:scale-105 "
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               />
             </div>
